@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!n(pt_=0v=_mw@oy+*0@v$1hbtjr@w_ye0hu2zz!a5l$4$8rku'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -70,6 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'expensetracker.wsgi.application'
+
 
 
 # Database
@@ -128,26 +129,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-'''
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-
-STATICFILES_DIR = {
-    os.path.join(BASE_DIR , "hotels/static")
-}
-
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'public/static') 
-MEDIA_URL = '/media/'
-
-'''
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "public" / "static",
 ]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
